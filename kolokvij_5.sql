@@ -106,6 +106,9 @@ update mladic set haljina ='Osijek';
 #U tablici ostavljena obrišite sve zapise čija je vrijednost kolone ogrlica jednako 17.
 delete from ostavljena where ogrlica = 17;
 
+#Izlistajte majica iz tablice punac uz uvjet da vrijednost kolone prviputa nepoznate.
+select majica from punac where prviputa is null;
+
 
 
 
