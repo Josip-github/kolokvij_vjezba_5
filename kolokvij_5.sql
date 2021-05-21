@@ -42,7 +42,7 @@ create table punica(
 	ogrlica int,
 	vesta varchar(49) not null,
 	modelnaocala varchar(31) not null,
-	trciputa datetime not null,
+	treciputa datetime not null,
 	punac int not null
 );
 
@@ -82,6 +82,23 @@ alter table punac add foreign key (svekar) references svekar(sifra);
 alter table svekar_cura add foreign key (svekar) references svekar(sifra);
 alter table svekar_cura add foreign key (cura) references cura(sifra);
 
+#U tablice punica, punac i svekar_cura unesite po 3 retka.
+insert into svekar(carape,eura)
+values('bijele',1309.98),('crne',345.67),('sportske',987.65);
+
+insert into punac(prviputa,svekar)
+values('1939-09-01',1),('1945-05-08',2),('1964-12-25',2);
+
+insert into punica(hlace,nausnica,vesta,modelnaocala,treciputa,punac)
+values('ljetne hlače',234,'proljetna','naočale za čitanje','1957-08-15',2),
+('zimske hlače',345,'adidas','sunčane naočale','1953-03-12',1),
+('svečane hlače',112,'nike vesta za trčanje','naočale za čitanje','1923-05-04',3);
+
+insert into cura(carape,maraka,vesta)
+values('pokemon čarape',10.10,'Adidas'),('pikachu čarapice',12.12,'Reebok'),('bijele sportske',33.33,'S kapuljačom');
+
+insert into svekar_cura(svekar,cura)
+values(1,1),(2,2),(3,3);
 
 
 
