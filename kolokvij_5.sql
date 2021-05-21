@@ -103,6 +103,9 @@ values(1,1),(2,2),(3,3);
 #U tablici mladic postavite svim zapisima kolonu haljina na vrijednost Osijek.
 update mladic set haljina ='Osijek';
 
+#U tablici ostavljena obrišite sve zapise čija je vrijednost kolone ogrlica jednako 17.
+delete from ostavljena where ogrlica = 17;
+
 
 
 
