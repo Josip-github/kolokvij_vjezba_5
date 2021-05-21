@@ -109,6 +109,21 @@ delete from ostavljena where ogrlica = 17;
 #Izlistajte majica iz tablice punac uz uvjet da vrijednost kolone prviputa nepoznate.
 select majica from punac where prviputa is null;
 
+/*Prikažite asocijalno iz tablice cura, stilfrizura iz tablice ostavljena te
+nausnica iz tablice punica uz uvjet da su vrijednosti kolone prviputa iz
+tablice punac poznate te da su vrijednosti kolone majica iz tablice
+svekar sadrže niz znakova ba. Podatke posložite po nausnica iz tablice
+punica silazno.*/
+
+#cura, ostavljena, punica, punac, svekar
+select c.asocijalno, o.stilfrizura, p2.nausnica 
+from cura c inner join svekar_cura sc on c.sifra = sc.cura 
+inner join svekar s on sc.svekar = s.sifra 
+inner join punac p on s.sifra = p.svekar 
+inner join punica p2 on p.sifra = p2.punac 
+inner join ostavljena o on p2.sifra = o.punica 
+where p.prviputa is not null and s.majica like '%ba%';
+
 
 
 
