@@ -100,6 +100,9 @@ values('pokemon čarape',10.10,'Adidas'),('pikachu čarapice',12.12,'Reebok'),('
 insert into svekar_cura(svekar,cura)
 values(1,1),(2,2),(3,3);
 
+#U tablici mladic postavite svim zapisima kolonu haljina na vrijednost Osijek.
+update mladic set haljina ='Osijek';
+
 
 
 
