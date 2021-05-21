@@ -84,7 +84,7 @@ alter table svekar_cura add foreign key (cura) references cura(sifra);
 
 #U tablice punica, punac i svekar_cura unesite po 3 retka.
 insert into svekar(carape,eura)
-values('bijele',1309.98),('crne',345.67),('sportske',987.65);
+values('bijele',1309.98),('crne',345.67),('sportske',987.65),('adidas bijele',333.65);
 
 insert into punac(prviputa,svekar)
 values('1939-09-01',1),('1945-05-08',2),('1964-12-25',2);
@@ -124,6 +124,10 @@ inner join punica p2 on p.sifra = p2.punac
 inner join ostavljena o on p2.sifra = o.punica 
 where p.prviputa is not null and s.majica like '%ba%';
 
+#Prikažite kolone majica i carape iz tablice svekar čiji se primarni ključ ne nalaze u tablici svekar_cura.
+select s.majica , s.carape 
+from svekar s inner join svekar_cura sc on s.sifra = sc.svekar 
+where sc.svekar is null;
 
 
 
