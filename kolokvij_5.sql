@@ -126,13 +126,8 @@ where p.prviputa is not null and s.majica like '%ba%';
 
 #Prikažite kolone majica i carape iz tablice svekar čiji se primarni ključ ne nalaze u tablici svekar_cura.
 select s.majica , s.carape 
-from svekar s inner join svekar_cura sc on s.sifra = sc.svekar 
+from svekar s left join svekar_cura sc on s.sifra = sc.svekar 
 where sc.svekar is null;
-
-
-
-
-
 
 
 
